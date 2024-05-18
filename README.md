@@ -22,4 +22,9 @@ cansniffer vcan0
 ./controls -s [seed] -l 2 vcan0
 ```
 
+# Command to Treat the output as a CSV format
+```​
+candump vcan0 -t d -i | sed -e 's/(//g' -e 's/)  vcan0  /,/g' -e 's/   //g' -e 's/\[/,/g' -e 's/\]/,/g' -e 's/  //g' -e 's/ /,/2g'
+```
+
 Props to ZombieCraig's Repo and ICSim software for linux: https://github.com/zombieCraig/ICSim.git
